@@ -1,316 +1,117 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>Lace Gallery | Tanvir Suta Ghar</title>
-
-  <meta name="description" content="Tanvir Suta Ghar Lace Gallery - Fancy Lace, Jari Lace and Cotton Lace collection.">
-
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: Arial, sans-serif;
-      background: #f8f5f0;
-      color: #222;
-    }
-
-    header {
-      background: linear-gradient(135deg, #7b1e3a, #a83255);
-      color: white;
-      text-align: center;
-      padding: 28px 15px;
-    }
-
-    header h1 {
-      font-size: 30px;
-      margin-bottom: 8px;
-    }
-
-    header p {
-      font-size: 15px;
-      opacity: 0.95;
-    }
-
-    .back-btn {
-      display: inline-block;
-      margin-top: 18px;
-      padding: 10px 20px;
-      background: white;
-      color: #7b1e3a;
-      text-decoration: none;
-      border-radius: 25px;
-      font-weight: bold;
-      transition: 0.3s;
-    }
-
-    .back-btn:hover {
-      background: #f1d9e1;
-    }
-
-    .container {
-      width: 92%;
-      max-width: 1100px;
-      margin: 35px auto;
-    }
-
-    .intro {
-      text-align: center;
-      margin-bottom: 30px;
-    }
-
-    .intro h2 {
-      font-size: 26px;
-      color: #7b1e3a;
-      margin-bottom: 10px;
-    }
-
-    .intro p {
-      color: #666;
-      line-height: 1.6;
-    }
-
-    .category-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 22px;
-    }
-
-    .category-card {
-      background: white;
-      border-radius: 18px;
-      overflow: hidden;
-      box-shadow: 0 5px 18px rgba(0,0,0,0.10);
-      text-decoration: none;
-      color: #222;
-      transition: 0.3s;
-    }
-
-    .category-card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-    }
-
-    .category-card img {
-      width: 100%;
-      height: 220px;
-      object-fit: cover;
-      display: block;
-    }
-
-    .card-content {
-      padding: 20px;
-      text-align: center;
-    }
-
-    .card-content h3 {
-      color: #7b1e3a;
-      font-size: 21px;
-      margin-bottom: 8px;
-    }
-
-    .card-content p {
-      color: #666;
-      font-size: 14px;
-      line-height: 1.5;
-    }
-
-    .view-btn {
-      display: inline-block;
-      margin-top: 14px;
-      background: #7b1e3a;
-      color: white;
-      padding: 9px 18px;
-      border-radius: 22px;
-      font-size: 14px;
-      font-weight: bold;
-    }
-
-    .contact {
-      margin-top: 40px;
-      background: white;
-      padding: 25px;
-      border-radius: 18px;
-      text-align: center;
-      box-shadow: 0 5px 18px rgba(0,0,0,0.08);
-    }
-
-    .contact h3 {
-      color: #7b1e3a;
-      margin-bottom: 10px;
-    }
-
-    .contact p {
-      color: #666;
-      margin-bottom: 15px;
-    }
-
-    .whatsapp {
-      display: inline-block;
-      background: #25D366;
-      color: white;
-      padding: 11px 22px;
-      border-radius: 25px;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    footer {
-      margin-top: 45px;
-      background: #222;
-      color: white;
-      text-align: center;
-      padding: 20px 10px;
-      font-size: 14px;
-    }
-
-    @media (max-width: 600px) {
-      header h1 {
-        font-size: 25px;
-      }
-
-      .intro h2 {
-        font-size: 23px;
-      }
-
-      .category-card img {
-        height: 200px;
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lace Gallery - Tanvir Suta Ghar</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-  <header>
+<header class="gallery-header">
+    <a href="index.html" class="back-btn">← Home</a>
     <h1>Tanvir Suta Ghar</h1>
-    <p>Quality Craft &amp; Decorative Materials</p>
+    <p>Lace Gallery</p>
+</header>
 
-    <a href="index.html" class="back-btn">
-      ← Back to Home
+<section class="lace-categories">
+
+    <a href="#fancy" class="lace-category">
+        <div class="category-icon">✨</div>
+        <h2>Fancy Lace</h2>
+        <p>View Collection</p>
     </a>
-  </header>
 
-  <main class="container">
+    <a href="#jari" class="lace-category">
+        <div class="category-icon">🌟</div>
+        <h2>Jari Lace</h2>
+        <p>View Collection</p>
+    </a>
 
-    <section class="intro">
-      <h2>Lace Gallery</h2>
-      <p>
-        Explore our collection of beautiful laces for fashion,
-        crafting, decoration and creative projects.
-      </p>
-    </section>
+    <a href="#cotton" class="lace-category">
+        <div class="category-icon">🧵</div>
+        <h2>Cotton Lace</h2>
+        <p>View Collection</p>
+    </a>
 
-    <section class="category-grid">
+</section>
 
-      <!-- Fancy Lace -->
-      <a href="#" class="category-card">
 
-        <img
-          src="images/lace.jpg"
-          alt="Fancy Lace"
-          onerror="this.style.display='none'"
-        >
+<!-- FANCY LACE -->
 
-        <div class="card-content">
-          <h3>Fancy Lace</h3>
+<section id="fancy" class="lace-section">
 
-          <p>
-            Beautiful and stylish fancy lace collection
-            for different creative and decorative works.
-          </p>
+    <h2>Fancy Lace</h2>
 
-          <span class="view-btn">
-            View Collection
-          </span>
+    <div class="lace-grid">
+
+        <div class="lace-item">
+            <img src="lace/fancy/1.jpg" alt="Fancy Lace">
         </div>
 
-      </a>
-
-
-      <!-- Jari Lace -->
-      <a href="#" class="category-card">
-
-        <img
-          src="images/lace.jpg"
-          alt="Jari Lace"
-          onerror="this.style.display='none'"
-        >
-
-        <div class="card-content">
-          <h3>Jari Lace</h3>
-
-          <p>
-            Attractive jari lace collection suitable for
-            clothing, decoration and handicrafts.
-          </p>
-
-          <span class="view-btn">
-            View Collection
-          </span>
+        <div class="lace-item">
+            <img src="lace/fancy/2.jpg" alt="Fancy Lace">
         </div>
 
-      </a>
-
-
-      <!-- Cotton Lace -->
-      <a href="#" class="category-card">
-
-        <img
-          src="images/lace.jpg"
-          alt="Cotton Lace"
-          onerror="this.style.display='none'"
-        >
-
-        <div class="card-content">
-          <h3>Cotton Lace</h3>
-
-          <p>
-            Soft and elegant cotton lace for clothing,
-            handmade products and creative projects.
-          </p>
-
-          <span class="view-btn">
-            View Collection
-          </span>
+        <div class="lace-item">
+            <img src="lace/fancy/3.jpg" alt="Fancy Lace">
         </div>
 
-      </a>
+        <div class="lace-item">
+            <img src="lace/fancy/4.jpg" alt="Fancy Lace">
+        </div>
 
-    </section>
+        <div class="lace-item">
+            <img src="lace/fancy/5.jpg" alt="Fancy Lace">
+        </div>
 
+        <div class="lace-item">
+            <img src="lace/fancy/6.jpg" alt="Fancy Lace">
+        </div>
 
-    <section class="contact">
+    </div>
 
-      <h3>Need More Information?</h3>
-
-      <p>
-        Contact Tanvir Suta Ghar for product details,
-        availability and price.
-      </p>
-
-      <a
-        href="https://wa.me/"
-        class="whatsapp"
-        target="_blank"
-      >
-        WhatsApp Us
-      </a>
-
-    </section>
-
-  </main>
+</section>
 
 
-  <footer>
-    © 2026 Tanvir Suta Ghar. All Rights Reserved.
-  </footer>
+<!-- JARI LACE -->
+
+<section id="jari" class="lace-section">
+
+    <h2>Jari Lace</h2>
+
+    <div class="lace-grid">
+
+        <div class="empty-category">
+            Jari Lace Collection Coming Soon
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- COTTON LACE -->
+
+<section id="cotton" class="lace-section">
+
+    <h2>Cotton Lace</h2>
+
+    <div class="lace-grid">
+
+        <div class="empty-category">
+            Cotton Lace Collection Coming Soon
+        </div>
+
+    </div>
+
+</section>
+
+
+<footer>
+    <p>© 2026 Tanvir Suta Ghar</p>
+</footer>
 
 </body>
 </html>
