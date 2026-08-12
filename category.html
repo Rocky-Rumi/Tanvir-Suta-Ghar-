@@ -1,16 +1,110 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta name="viewport"
-content="width=device-width, initial-scale=1.0">
-
-<title>Tanvir Suta Ghar</title>
+<title>Lace Gallery | Tanvir Suta Ghar</title>
 
 <link rel="stylesheet" href="style.css">
+
+<style>
+
+.lace-tabs{
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
+gap:10px;
+margin-bottom:35px;
+}
+
+.lace-tab{
+border:0;
+background:#eee;
+color:#333;
+padding:11px 22px;
+border-radius:25px;
+cursor:pointer;
+font-weight:bold;
+}
+
+.lace-tab.active{
+background:#a56b3f;
+color:white;
+}
+
+.lace-gallery{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:18px;
+}
+
+.lace-item{
+background:white;
+border-radius:15px;
+overflow:hidden;
+box-shadow:0 5px 18px rgba(0,0,0,.08);
+border:1px solid #eee;
+}
+
+.lace-item img{
+width:100%;
+height:240px;
+object-fit:cover;
+display:block;
+cursor:pointer;
+}
+
+.lace-info{
+padding:14px;
+}
+
+.lace-info h3{
+font-size:16px;
+margin-bottom:4px;
+}
+
+.lace-info p{
+font-size:13px;
+color:#777;
+}
+
+.empty{
+grid-column:1/-1;
+text-align:center;
+padding:50px 20px;
+background:white;
+border-radius:15px;
+color:#777;
+}
+
+@media(max-width:900px){
+.lace-gallery{
+grid-template-columns:repeat(3,1fr);
+}
+}
+
+@media(max-width:600px){
+.lace-gallery{
+grid-template-columns:repeat(2,1fr);
+gap:10px;
+}
+
+.lace-item img{
+height:180px;
+}
+
+.lace-info{
+padding:10px;
+}
+
+.lace-info h3{
+font-size:14px;
+}
+}
+
+</style>
 
 </head>
 
@@ -32,25 +126,18 @@ THREADS • LACE • CRAFT
 
 </a>
 
-
 <ul class="nav-links">
 
 <li>
-<a href="index.html">
-Home
-</a>
+<a href="index.html">Home</a>
 </li>
 
 <li>
-<a href="index.html#categories">
-Categories
-</a>
+<a href="index.html#categories">Categories</a>
 </li>
 
 <li>
-<a href="index.html#contact">
-Contact
-</a>
+<a href="index.html#contact">Contact</a>
 </li>
 
 </ul>
@@ -60,82 +147,65 @@ Contact
 </header>
 
 
-
 <section class="page-hero">
 
-<h1 id="pageTitle">
-Collection
-</h1>
+<h1>Lace Gallery</h1>
 
-<p id="pageDescription">
-Explore our product collection.
+<p>
+Explore our Fancy Lace, Jari Lace and Cotton Lace collection.
 </p>
 
-<a href="index.html"
-class="back-btn">
-
+<a href="index.html" class="back-btn">
 ← Back to Home
-
 </a>
 
 </section>
 
 
-
 <section class="section">
 
 
-<div class="section-title">
+<div class="lace-tabs">
 
-<small>
-OUR COLLECTION
-</small>
+<button class="lace-tab active"
+onclick="showLace('fancy',this)">
+Fancy Lace
+</button>
 
-<h2 id="galleryTitle">
-Products
-</h2>
+<button class="lace-tab"
+onclick="showLace('jari',this)">
+Jari Lace
+</button>
 
-<p id="galleryDescription">
-Explore our products.
-</p>
+<button class="lace-tab"
+onclick="showLace('cotton',this)">
+Cotton Lace
+</button>
 
 </div>
 
 
-
 <div
-id="subCategories"
-class="category-grid">
-</div>
-
-
-
-<div
-id="gallery"
-class="gallery-grid">
+id="laceGallery"
+class="lace-gallery">
 </div>
 
 
 </section>
 
 
-
 <footer>
 
 <p>
-<strong>
-Tanvir Suta Ghar
-</strong>
+<strong>Tanvir Suta Ghar</strong>
 </p>
 
 <p>
-Threads • Lace • Yarn • Resin •
-Silicone Molds • Craft Materials
+Threads • Lace • Yarn • Resin • Craft Materials
 </p>
 
 <p>
-© 2026 Tanvir Suta Ghar.
-All Rights Reserved.
+© 2026 Tanvir Suta Ghar. All Rights Reserved.
 </p>
 
 </footer>
@@ -145,295 +215,183 @@ All Rights Reserved.
 <script>
 
 
-const params =
-new URLSearchParams(window.location.search);
+/*
+========================================
+LACE PRODUCT LIST
+========================================
 
-const category =
-params.get("cat") || "lace";
+শুধু এখানে নতুন ছবির নাম যোগ করবে।
+
+Example:
+
+"fancy-001.jpg"
+
+ছবিটি থাকতে হবে:
+
+images/lace/fancy/fancy-001.jpg
+*/
 
 
-const data = {
+const laceProducts = {
 
 
-lace: {
+fancy: [
 
-title:"Lace Gallery",
-
-description:
-"Explore our beautiful Lace Collection.",
-
-sub:true
-
+{
+image:"fancy-001.jpg",
+name:"Fancy Lace 001",
+price:"Contact for Price"
 },
 
-
-thread: {
-
-title:"Thread & Yarn",
-
-description:
-"Explore our Thread and Yarn collection.",
-
-folder:"thread"
-
+{
+image:"fancy-002.jpg",
+name:"Fancy Lace 002",
+price:"Contact for Price"
 },
 
-
-resin: {
-
-title:"Resin Materials",
-
-description:
-"Explore our Resin Materials collection.",
-
-folder:"resin"
-
-},
-
-
-silicone: {
-
-title:"Silicone Molds",
-
-description:
-"Explore our Silicone Mold collection.",
-
-folder:"silicone"
-
-},
-
-
-flowers: {
-
-title:"Artificial Flowers",
-
-description:
-"Explore our Artificial Flowers collection.",
-
-folder:"flowers"
-
-},
-
-
-craft: {
-
-title:"Craft Materials",
-
-description:
-"Explore our Craft Materials collection.",
-
-folder:"craft"
-
-},
-
-
-candle: {
-
-title:"Candle Materials",
-
-description:
-"Explore our Candle Making Materials.",
-
-folder:"candle"
-
-},
-
-
-gypsum: {
-
-title:"Gypsum Items",
-
-description:
-"Explore our Gypsum Items and Molds.",
-
-folder:"gypsum"
-
-},
-
-
-"fancy-lace": {
-
-title:"Fancy Lace",
-
-description:
-"Beautiful Fancy Lace collection.",
-
-folder:"lace/fancy"
-
-},
-
-
-"jari-lace": {
-
-title:"Jari Lace",
-
-description:
-"Beautiful Jari Lace collection.",
-
-folder:"lace/jari"
-
-},
-
-
-"cotton-lace": {
-
-title:"Cotton Lace",
-
-description:
-"Beautiful Cotton Lace collection.",
-
-folder:"lace/cotton"
-
+{
+image:"fancy-003.jpg",
+name:"Fancy Lace 003",
+price:"Contact for Price"
 }
 
+],
+
+
+jari: [
+
+{
+image:"jari-001.jpg",
+name:"Jari Lace 001",
+price:"Contact for Price"
+},
+
+{
+image:"jari-002.jpg",
+name:"Jari Lace 002",
+price:"Contact for Price"
+}
+
+],
+
+
+cotton: [
+
+{
+image:"cotton-001.jpg",
+name:"Cotton Lace 001",
+price:"Contact for Price"
+},
+
+{
+image:"cotton-002.jpg",
+name:"Cotton Lace 002",
+price:"Contact for Price"
+}
+
+]
 
 };
 
 
-const current =
-data[category] || data.lace;
+
+function showLace(type,button){
 
 
-document.getElementById("pageTitle")
-.innerText=current.title;
+document
+.querySelectorAll(".lace-tab")
+.forEach(function(tab){
+
+tab.classList.remove("active");
+
+});
 
 
-document.getElementById("pageDescription")
-.innerText=current.description;
-
-
-document.getElementById("galleryTitle")
-.innerText=current.title;
-
-
-document.getElementById("galleryDescription")
-.innerText=current.description;
-
-
-
-const sub =
-document.getElementById("subCategories");
+button.classList.add("active");
 
 
 const gallery =
-document.getElementById("gallery");
+document.getElementById("laceGallery");
 
 
-
-if(current.sub){
-
-sub.innerHTML=`
+const products =
+laceProducts[type];
 
 
-<a
-href="category.html?cat=fancy-lace"
-class="category-card">
-
-<img
-src="images/lace.jpg"
-alt="Fancy Lace">
-
-<div class="category-overlay">
-
-<h3>
-Fancy Lace
-</h3>
-
-<p>
-View Collection
-</p>
-
-</div>
-
-</a>
-
-
-
-<a
-href="category.html?cat=jari-lace"
-class="category-card">
-
-<img
-src="images/lace.jpg"
-alt="Jari Lace">
-
-<div class="category-overlay">
-
-<h3>
-Jari Lace
-</h3>
-
-<p>
-View Collection
-</p>
-
-</div>
-
-</a>
-
-
-
-<a
-href="category.html?cat=cotton-lace"
-class="category-card">
-
-<img
-src="images/lace.jpg"
-alt="Cotton Lace">
-
-<div class="category-overlay">
-
-<h3>
-Cotton Lace
-</h3>
-
-<p>
-View Collection
-</p>
-
-</div>
-
-</a>
-
-`;
-
-}else{
-
-
-sub.style.display="none";
-
+if(!products || products.length===0){
 
 gallery.innerHTML=`
 
+<div class="empty">
 
-<div class="gallery-card">
-
-<img
-src="images/${current.folder === "lace/fancy" || current.folder === "lace/jari" || current.folder === "lace/cotton" ? "lace.jpg" : current.folder === "thread" ? "milk_cotton.jpg" : current.folder === "resin" ? "resin.jpg" : current.folder === "silicone" ? "silicon_mold.jpg" : current.folder === "flowers" ? "flowers.jpg" : current.folder === "craft" ? "lace.jpg" : current.folder === "candle" ? "resin.jpg" : "silicon_mold.jpg"}"
-alt="${current.title}">
-
-<div class="gallery-info">
-
-<h3>
-${current.title}
-</h3>
+<h3>No products added yet.</h3>
 
 <p>
-Product gallery will appear here.
+Product images will appear here.
 </p>
-
-</div>
 
 </div>
 
 `;
 
+return;
+
 }
+
+
+gallery.innerHTML="";
+
+
+products.forEach(function(product){
+
+
+const card=document.createElement("div");
+
+card.className="lace-item";
+
+
+card.innerHTML=`
+
+<img
+src="images/lace/${type}/${product.image}"
+alt="${product.name}"
+onclick="window.open(this.src,'_blank')"
+onerror="this.parentElement.style.display='none'"
+>
+
+
+<div class="lace-info">
+
+<h3>
+${product.name}
+</h3>
+
+<p>
+${product.price}
+</p>
+
+</div>
+
+`;
+
+
+gallery.appendChild(card);
+
+
+});
+
+
+}
+
+
+showLace(
+"fancy",
+document.querySelector(".lace-tab")
+);
 
 
 </script>
 
 
 </body>
-
 </html>
