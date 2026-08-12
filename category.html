@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Tanvir Suta Ghar</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+
+<header>
+
+<nav class="navbar">
+
+<a href="index.html" class="logo">
+
+Tanvir Suta Ghar
+
+<span>
+THREADS • LACE • CRAFT
+</span>
+
+</a>
+
+
+<ul class="nav-links">
+
+<li>
+<a href="index.html">
+Home
+</a>
+</li>
+
+<li>
+<a href="index.html#categories">
+Categories
+</a>
+</li>
+
+<li>
+<a href="index.html#contact">
+Contact
+</a>
+</li>
+
+</ul>
+
+</nav>
+
+</header>
+
+
+
+<section class="page-hero">
+
+<h1 id="pageTitle">
+Collection
+</h1>
+
+<p id="pageDescription">
+Explore our product collection.
+</p>
+
+<a href="index.html"
+class="back-btn">
+
+← Back to Home
+
+</a>
+
+</section>
+
+
+
+<section class="section">
+
+
+<div class="section-title">
+
+<small>
+OUR COLLECTION
+</small>
+
+<h2 id="galleryTitle">
+Products
+</h2>
+
+<p id="galleryDescription">
+Explore our products.
+</p>
+
+</div>
+
+
+
+<div
+id="subCategories"
+class="category-grid">
+</div>
+
+
+
+<div
+id="gallery"
+class="gallery-grid">
+</div>
+
+
+</section>
+
+
+
+<footer>
+
+<p>
+<strong>
+Tanvir Suta Ghar
+</strong>
+</p>
+
+<p>
+Threads • Lace • Yarn • Resin •
+Silicone Molds • Craft Materials
+</p>
+
+<p>
+© 2026 Tanvir Suta Ghar.
+All Rights Reserved.
+</p>
+
+</footer>
+
+
+
+<script>
+
+
+const params =
+new URLSearchParams(window.location.search);
+
+const category =
+params.get("cat") || "lace";
+
+
+const data = {
+
+
+lace: {
+
+title:"Lace Gallery",
+
+description:
+"Explore our beautiful Lace Collection.",
+
+sub:true
+
+},
+
+
+thread: {
+
+title:"Thread & Yarn",
+
+description:
+"Explore our Thread and Yarn collection.",
+
+folder:"thread"
+
+},
+
+
+resin: {
+
+title:"Resin Materials",
+
+description:
+"Explore our Resin Materials collection.",
+
+folder:"resin"
+
+},
+
+
+silicone: {
+
+title:"Silicone Molds",
+
+description:
+"Explore our Silicone Mold collection.",
+
+folder:"silicone"
+
+},
+
+
+flowers: {
+
+title:"Artificial Flowers",
+
+description:
+"Explore our Artificial Flowers collection.",
+
+folder:"flowers"
+
+},
+
+
+craft: {
+
+title:"Craft Materials",
+
+description:
+"Explore our Craft Materials collection.",
+
+folder:"craft"
+
+},
+
+
+candle: {
+
+title:"Candle Materials",
+
+description:
+"Explore our Candle Making Materials.",
+
+folder:"candle"
+
+},
+
+
+gypsum: {
+
+title:"Gypsum Items",
+
+description:
+"Explore our Gypsum Items and Molds.",
+
+folder:"gypsum"
+
+},
+
+
+"fancy-lace": {
+
+title:"Fancy Lace",
+
+description:
+"Beautiful Fancy Lace collection.",
+
+folder:"lace/fancy"
+
+},
+
+
+"jari-lace": {
+
+title:"Jari Lace",
+
+description:
+"Beautiful Jari Lace collection.",
+
+folder:"lace/jari"
+
+},
+
+
+"cotton-lace": {
+
+title:"Cotton Lace",
+
+description:
+"Beautiful Cotton Lace collection.",
+
+folder:"lace/cotton"
+
+}
+
+
+};
+
+
+const current =
+data[category] || data.lace;
+
+
+document.getElementById("pageTitle")
+.innerText=current.title;
+
+
+document.getElementById("pageDescription")
+.innerText=current.description;
+
+
+document.getElementById("galleryTitle")
+.innerText=current.title;
+
+
+document.getElementById("galleryDescription")
+.innerText=current.description;
+
+
+
+const sub =
+document.getElementById("subCategories");
+
+
+const gallery =
+document.getElementById("gallery");
+
+
+
+if(current.sub){
+
+sub.innerHTML=`
+
+
+<a
+href="category.html?cat=fancy-lace"
+class="category-card">
+
+<img
+src="images/lace.jpg"
+alt="Fancy Lace">
+
+<div class="category-overlay">
+
+<h3>
+Fancy Lace
+</h3>
+
+<p>
+View Collection
+</p>
+
+</div>
+
+</a>
+
+
+
+<a
+href="category.html?cat=jari-lace"
+class="category-card">
+
+<img
+src="images/lace.jpg"
+alt="Jari Lace">
+
+<div class="category-overlay">
+
+<h3>
+Jari Lace
+</h3>
+
+<p>
+View Collection
+</p>
+
+</div>
+
+</a>
+
+
+
+<a
+href="category.html?cat=cotton-lace"
+class="category-card">
+
+<img
+src="images/lace.jpg"
+alt="Cotton Lace">
+
+<div class="category-overlay">
+
+<h3>
+Cotton Lace
+</h3>
+
+<p>
+View Collection
+</p>
+
+</div>
+
+</a>
+
+`;
+
+}else{
+
+
+sub.style.display="none";
+
+
+gallery.innerHTML=`
+
+
+<div class="gallery-card">
+
+<img
+src="images/${current.folder === "lace/fancy" || current.folder === "lace/jari" || current.folder === "lace/cotton" ? "lace.jpg" : current.folder === "thread" ? "milk_cotton.jpg" : current.folder === "resin" ? "resin.jpg" : current.folder === "silicone" ? "silicon_mold.jpg" : current.folder === "flowers" ? "flowers.jpg" : current.folder === "craft" ? "lace.jpg" : current.folder === "candle" ? "resin.jpg" : "silicon_mold.jpg"}"
+alt="${current.title}">
+
+<div class="gallery-info">
+
+<h3>
+${current.title}
+</h3>
+
+<p>
+Product gallery will appear here.
+</p>
+
+</div>
+
+</div>
+
+`;
+
+}
+
+
+</script>
+
+
+</body>
+
+</html>
