@@ -8,486 +8,35 @@
 
 <meta name="description" content="Tanvir Suta Ghar - Lace, Threads, Resin, Silicone Molds, Artificial Flowers and Craft Materials.">
 
-<style>
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
-
-html{
-    scroll-behavior:smooth;
-}
-
-body{
-    font-family:Arial, Helvetica, sans-serif;
-    background:#faf8f5;
-    color:#292929;
-    line-height:1.6;
-}
-
-/* HEADER */
-header{
-    position:sticky;
-    top:0;
-    z-index:1000;
-    background:rgba(255,255,255,.96);
-    border-bottom:1px solid #eee;
-    box-shadow:0 2px 15px rgba(0,0,0,.06);
-}
-
-.navbar{
-    max-width:1200px;
-    margin:auto;
-    padding:15px 20px;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    gap:20px;
-}
-
-.logo{
-    text-decoration:none;
-    color:#222;
-    font-size:22px;
-    font-weight:800;
-    letter-spacing:.3px;
-}
-
-.logo span{
-    display:block;
-    color:#a56b3f;
-    font-size:11px;
-    font-weight:500;
-    letter-spacing:2px;
-}
-
-.nav-links{
-    display:flex;
-    gap:25px;
-    list-style:none;
-}
-
-.nav-links a{
-    text-decoration:none;
-    color:#333;
-    font-size:14px;
-    font-weight:600;
-}
-
-.nav-links a:hover{
-    color:#a56b3f;
-}
-
-/* HERO */
-.hero{
-    min-height:570px;
-    display:flex;
-    align-items:center;
-    background:
-    linear-gradient(rgba(40,30,25,.55),rgba(40,30,25,.55)),
-    url("images/lace.jpg") center/cover no-repeat;
-}
-
-.hero-content{
-    width:100%;
-    max-width:1200px;
-    margin:auto;
-    padding:80px 20px;
-    color:white;
-}
-
-.hero-content small{
-    font-size:13px;
-    letter-spacing:3px;
-    text-transform:uppercase;
-}
-
-.hero h1{
-    font-size:clamp(40px,7vw,75px);
-    line-height:1.05;
-    margin:15px 0;
-}
-
-.hero h1 span{
-    color:#f0c39e;
-}
-
-.hero p{
-    max-width:600px;
-    font-size:17px;
-    margin-bottom:30px;
-}
-
-.btn{
-    display:inline-block;
-    text-decoration:none;
-    padding:13px 25px;
-    border-radius:30px;
-    font-weight:bold;
-    margin-right:8px;
-    margin-bottom:8px;
-    transition:.3s;
-}
-
-.btn-primary{
-    background:#a56b3f;
-    color:white;
-}
-
-.btn-primary:hover{
-    background:#874f29;
-    transform:translateY(-2px);
-}
-
-.btn-light{
-    background:white;
-    color:#333;
-}
-
-.btn-light:hover{
-    background:#f2f2f2;
-}
-
-/* GENERAL */
-.section{
-    max-width:1200px;
-    margin:auto;
-    padding:75px 20px;
-}
-
-.section-title{
-    text-align:center;
-    margin-bottom:45px;
-}
-
-.section-title small{
-    color:#a56b3f;
-    font-weight:bold;
-    letter-spacing:2px;
-    text-transform:uppercase;
-}
-
-.section-title h2{
-    font-size:34px;
-    margin:8px 0;
-}
-
-.section-title p{
-    color:#777;
-    max-width:600px;
-    margin:auto;
-}
-
-/* CATEGORY */
-.category-grid{
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:20px;
-}
-
-.category-card{
-    position:relative;
-    min-height:220px;
-    border-radius:18px;
-    overflow:hidden;
-    text-decoration:none;
-    color:white;
-    box-shadow:0 8px 25px rgba(0,0,0,.1);
-}
-
-.category-card img{
-    width:100%;
-    height:100%;
-    min-height:220px;
-    object-fit:cover;
-    transition:.5s;
-}
-
-.category-card:hover img{
-    transform:scale(1.08);
-}
-
-.category-overlay{
-    position:absolute;
-    inset:0;
-    display:flex;
-    flex-direction:column;
-    justify-content:flex-end;
-    padding:22px;
-    background:linear-gradient(transparent,rgba(0,0,0,.75));
-}
-
-.category-overlay h3{
-    font-size:21px;
-}
-
-.category-overlay p{
-    font-size:13px;
-    opacity:.9;
-}
-
-/* PRODUCTS */
-.product-grid{
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:22px;
-}
-
-.product-card{
-    background:white;
-    border-radius:16px;
-    overflow:hidden;
-    border:1px solid #eee;
-    box-shadow:0 5px 20px rgba(0,0,0,.05);
-    transition:.3s;
-}
-
-.product-card:hover{
-    transform:translateY(-5px);
-    box-shadow:0 12px 30px rgba(0,0,0,.1);
-}
-
-.product-card img{
-    width:100%;
-    height:220px;
-    object-fit:cover;
-}
-
-.product-info{
-    padding:17px;
-}
-
-.product-info h3{
-    font-size:17px;
-    margin-bottom:5px;
-}
-
-.product-info p{
-    font-size:13px;
-    color:#777;
-}
-
-/* ABOUT */
-.about{
-    background:white;
-}
-
-.about-box{
-    max-width:850px;
-    margin:auto;
-    text-align:center;
-}
-
-.about-box h2{
-    font-size:34px;
-    margin:10px 0 20px;
-}
-
-.about-box p{
-    color:#666;
-    margin-bottom:15px;
-}
-
-/* FEATURES */
-.features{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:20px;
-}
-
-.feature{
-    text-align:center;
-    background:white;
-    padding:30px 20px;
-    border-radius:16px;
-    border:1px solid #eee;
-}
-
-.feature-icon{
-    font-size:35px;
-    margin-bottom:10px;
-}
-
-.feature h3{
-    margin-bottom:8px;
-}
-
-.feature p{
-    color:#777;
-    font-size:14px;
-}
-
-/* CONTACT */
-.contact-box{
-    background:#30251f;
-    color:white;
-    border-radius:25px;
-    padding:55px 25px;
-    text-align:center;
-}
-
-.contact-box h2{
-    font-size:34px;
-    margin-bottom:10px;
-}
-
-.contact-box p{
-    color:#ddd;
-    margin-bottom:25px;
-}
-
-.contact-buttons a{
-    display:inline-block;
-    text-decoration:none;
-    padding:12px 22px;
-    border-radius:30px;
-    margin:5px;
-    font-weight:bold;
-}
-
-.whatsapp{
-    background:#25D366;
-    color:white;
-}
-
-.facebook{
-    background:#1877F2;
-    color:white;
-}
-
-/* FOOTER */
-footer{
-    background:#211a16;
-    color:#ccc;
-    text-align:center;
-    padding:30px 20px;
-}
-
-footer strong{
-    color:white;
-}
-
-footer p{
-    font-size:13px;
-    margin-top:7px;
-}
-
-/* MOBILE */
-@media(max-width:900px){
-    .category-grid,
-    .product-grid{
-        grid-template-columns:repeat(2,1fr);
-    }
-
-    .features{
-        grid-template-columns:1fr;
-    }
-
-    .nav-links{
-        display:none;
-    }
-}
-
-@media(max-width:600px){
-    .navbar{
-        padding:13px 15px;
-    }
-
-    .logo{
-        font-size:19px;
-    }
-
-    .hero{
-        min-height:520px;
-    }
-
-    .hero-content{
-        padding:60px 20px;
-    }
-
-    .hero h1{
-        font-size:44px;
-    }
-
-    .hero p{
-        font-size:15px;
-    }
-
-    .section{
-        padding:55px 15px;
-    }
-
-    .section-title h2{
-        font-size:28px;
-    }
-
-    .category-grid,
-    .product-grid{
-        grid-template-columns:1fr 1fr;
-        gap:12px;
-    }
-
-    .category-card,
-    .category-card img{
-        min-height:180px;
-    }
-
-    .category-overlay{
-        padding:14px;
-    }
-
-    .category-overlay h3{
-        font-size:16px;
-    }
-
-    .category-overlay p{
-        font-size:11px;
-    }
-
-    .product-card img{
-        height:160px;
-    }
-
-    .product-info{
-        padding:12px;
-    }
-
-    .product-info h3{
-        font-size:14px;
-    }
-
-    .contact-box h2{
-        font-size:27px;
-    }
-}
-</style>
+<link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<!-- HEADER -->
 <header>
+
 <nav class="navbar">
 
-<a href="#home" class="logo">
-    Tanvir Suta Ghar
-    <span>THREADS • LACE • CRAFT</span>
+<a href="index.html" class="logo">
+Tanvir Suta Ghar
+<span>THREADS • LACE • CRAFT</span>
 </a>
 
 <ul class="nav-links">
-    <li><a href="#home">Home</a></li>
-    <li><a href="#categories">Categories</a></li>
-    <li><a href="#products">Products</a></li>
-    <li><a href="#about">About</a></li>
-    <li><a href="#contact">Contact</a></li>
+<li><a href="#home">Home</a></li>
+<li><a href="#categories">Categories</a></li>
+<li><a href="#products">Products</a></li>
+<li><a href="#about">About</a></li>
+<li><a href="#contact">Contact</a></li>
 </ul>
 
 </nav>
+
 </header>
 
 
 <!-- HERO -->
+
 <section class="hero" id="home">
 
 <div class="hero-content">
@@ -506,214 +55,334 @@ and creative craft supplies.
 </p>
 
 <a href="#categories" class="btn btn-primary">
-    Explore Collection
+Explore Collection
 </a>
 
 <a href="#contact" class="btn btn-light">
-    Contact Us
+Contact Us
 </a>
 
 </div>
+
 </section>
 
 
 <!-- CATEGORIES -->
+
 <section class="section" id="categories">
 
 <div class="section-title">
-    <small>Our Collection</small>
-    <h2>Shop By Category</h2>
-    <p>
-        Explore our collection of quality materials
-        for your creative work and business.
-    </p>
+
+<small>Our Collection</small>
+
+<h2>Shop By Category</h2>
+
+<p>
+Explore our collection of quality materials
+for your creative work and business.
+</p>
+
 </div>
 
 
 <div class="category-grid">
 
-<a href="#products" class="category-card">
-    <img src="images/lace.jpg" alt="Lace">
-    <div class="category-overlay">
-        <h3>Lace Collection</h3>
-        <p>Fancy • Jari • Cotton & More</p>
-    </div>
-</a>
 
+<!-- LACE -->
 
-<a href="#products" class="category-card">
-    <img src="images/milk_cotton.jpg" alt="Thread and Yarn">
-    <div class="category-overlay">
-        <h3>Thread & Yarn</h3>
-        <p>Milk Cotton & More</p>
-    </div>
-</a>
+<a href="category.html?cat=lace" class="category-card">
 
+<img src="images/lace.jpg" alt="Lace Collection">
 
-<a href="#products" class="category-card">
-    <img src="images/resin.jpg" alt="Resin Materials">
-    <div class="category-overlay">
-        <h3>Resin Materials</h3>
-        <p>Quality Resin Supplies</p>
-    </div>
-</a>
+<div class="category-overlay">
 
+<h3>Lace Collection</h3>
 
-<a href="#products" class="category-card">
-    <img src="images/silicon_mold.jpg" alt="Silicone Molds">
-    <div class="category-overlay">
-        <h3>Silicone Molds</h3>
-        <p>Different Shapes & Designs</p>
-    </div>
-</a>
-
-
-<a href="#products" class="category-card">
-    <img src="images/flowers.jpg" alt="Artificial Flowers">
-    <div class="category-overlay">
-        <h3>Artificial Flowers</h3>
-        <p>Beautiful Decorative Flowers</p>
-    </div>
-</a>
-
-
-<a href="#products" class="category-card">
-    <img src="images/lace.jpg" alt="Craft Materials">
-    <div class="category-overlay">
-        <h3>Craft Materials</h3>
-        <p>Creative Making Supplies</p>
-    </div>
-</a>
-
-
-<a href="#products" class="category-card">
-    <img src="images/resin.jpg" alt="Candle Materials">
-    <div class="category-overlay">
-        <h3>Candle Materials</h3>
-        <p>For Creative Candle Making</p>
-    </div>
-</a>
-
-
-<a href="#products" class="category-card">
-    <img src="images/silicon_mold.jpg" alt="Gypsum">
-    <div class="category-overlay">
-        <h3>Gypsum Items</h3>
-        <p>Molds & Decorative Items</p>
-    </div>
-</a>
+<p>Fancy • Jari • Cotton & More</p>
 
 </div>
+
+</a>
+
+
+<!-- THREAD -->
+
+<a href="category.html?cat=thread" class="category-card">
+
+<img src="images/milk_cotton.jpg" alt="Thread and Yarn">
+
+<div class="category-overlay">
+
+<h3>Thread & Yarn</h3>
+
+<p>Milk Cotton & More</p>
+
+</div>
+
+</a>
+
+
+<!-- RESIN -->
+
+<a href="category.html?cat=resin" class="category-card">
+
+<img src="images/resin.jpg" alt="Resin Materials">
+
+<div class="category-overlay">
+
+<h3>Resin Materials</h3>
+
+<p>Quality Resin Supplies</p>
+
+</div>
+
+</a>
+
+
+<!-- SILICONE -->
+
+<a href="category.html?cat=silicone" class="category-card">
+
+<img src="images/silicon_mold.jpg" alt="Silicone Molds">
+
+<div class="category-overlay">
+
+<h3>Silicone Molds</h3>
+
+<p>Different Shapes & Designs</p>
+
+</div>
+
+</a>
+
+
+<!-- FLOWERS -->
+
+<a href="category.html?cat=flowers" class="category-card">
+
+<img src="images/flowers.jpg" alt="Artificial Flowers">
+
+<div class="category-overlay">
+
+<h3>Artificial Flowers</h3>
+
+<p>Beautiful Decorative Flowers</p>
+
+</div>
+
+</a>
+
+
+<!-- CRAFT -->
+
+<a href="category.html?cat=craft" class="category-card">
+
+<img src="images/lace.jpg" alt="Craft Materials">
+
+<div class="category-overlay">
+
+<h3>Craft Materials</h3>
+
+<p>Creative Making Supplies</p>
+
+</div>
+
+</a>
+
+
+<!-- CANDLE -->
+
+<a href="category.html?cat=candle" class="category-card">
+
+<img src="images/resin.jpg" alt="Candle Materials">
+
+<div class="category-overlay">
+
+<h3>Candle Materials</h3>
+
+<p>Creative Candle Making</p>
+
+</div>
+
+</a>
+
+
+<!-- GYPSUM -->
+
+<a href="category.html?cat=gypsum" class="category-card">
+
+<img src="images/silicon_mold.jpg" alt="Gypsum Items">
+
+<div class="category-overlay">
+
+<h3>Gypsum Items</h3>
+
+<p>Molds & Decorative Items</p>
+
+</div>
+
+</a>
+
+
+</div>
+
 </section>
 
 
 <!-- FEATURED PRODUCTS -->
+
 <section class="section" id="products">
 
 <div class="section-title">
-    <small>Featured</small>
-    <h2>Popular Products</h2>
-    <p>
-        Some of our featured products and materials.
-    </p>
+
+<small>Featured</small>
+
+<h2>Popular Products</h2>
+
+<p>
+Some of our featured products and materials.
+</p>
+
 </div>
 
 
 <div class="product-grid">
 
-<div class="product-card">
-    <img src="images/lace.jpg" alt="Lace Collection">
-    <div class="product-info">
-        <h3>Lace Collection</h3>
-        <p>Fancy & decorative lace varieties.</p>
-    </div>
-</div>
 
+<a href="category.html?cat=lace" class="product-card">
 
-<div class="product-card">
-    <img src="images/milk_cotton.jpg" alt="Milk Cotton Yarn">
-    <div class="product-info">
-        <h3>Milk Cotton Yarn</h3>
-        <p>Soft and beautiful yarn for creative work.</p>
-    </div>
-</div>
+<img src="images/lace.jpg" alt="Lace">
 
+<div class="product-info">
 
-<div class="product-card">
-    <img src="images/resin.jpg" alt="Resin Materials">
-    <div class="product-info">
-        <h3>Resin Materials</h3>
-        <p>Materials for resin crafts and projects.</p>
-    </div>
-</div>
+<h3>Lace Collection</h3>
 
-
-<div class="product-card">
-    <img src="images/silicon_mold.jpg" alt="Silicone Mold">
-    <div class="product-info">
-        <h3>Silicone Molds</h3>
-        <p>Different molds for creative projects.</p>
-    </div>
-</div>
+<p>Fancy, Jari & Cotton Lace.</p>
 
 </div>
+
+</a>
+
+
+<a href="category.html?cat=thread" class="product-card">
+
+<img src="images/milk_cotton.jpg" alt="Milk Cotton Yarn">
+
+<div class="product-info">
+
+<h3>Milk Cotton Yarn</h3>
+
+<p>Soft and beautiful yarn.</p>
+
+</div>
+
+</a>
+
+
+<a href="category.html?cat=resin" class="product-card">
+
+<img src="images/resin.jpg" alt="Resin Materials">
+
+<div class="product-info">
+
+<h3>Resin Materials</h3>
+
+<p>Materials for resin crafts.</p>
+
+</div>
+
+</a>
+
+
+<a href="category.html?cat=silicone" class="product-card">
+
+<img src="images/silicon_mold.jpg" alt="Silicone Molds">
+
+<div class="product-info">
+
+<h3>Silicone Molds</h3>
+
+<p>Different shapes and designs.</p>
+
+</div>
+
+</a>
+
+
+</div>
+
 </section>
 
 
 <!-- WHY US -->
+
 <section class="section">
 
 <div class="section-title">
-    <small>Why Choose Us</small>
-    <h2>Made For Creators</h2>
+
+<small>Why Choose Us</small>
+
+<h2>Made For Creators</h2>
+
 </div>
 
 
 <div class="features">
 
-<div class="feature">
-    <div class="feature-icon">✨</div>
-    <h3>Quality Products</h3>
-    <p>
-        We aim to provide quality materials
-        for your creative work.
-    </p>
-</div>
-
 
 <div class="feature">
-    <div class="feature-icon">🛍️</div>
-    <h3>Wide Collection</h3>
-    <p>
-        Lace, yarn, resin, molds and
-        many craft materials in one place.
-    </p>
+
+<div class="feature-icon">✨</div>
+
+<h3>Quality Products</h3>
+
+<p>
+Quality materials for your creative work.
+</p>
+
 </div>
 
 
 <div class="feature">
-    <div class="feature-icon">🤝</div>
-    <h3>Customer Support</h3>
-    <p>
-        Contact us for product information,
-        availability and orders.
-    </p>
-</div>
+
+<div class="feature-icon">🛍️</div>
+
+<h3>Wide Collection</h3>
+
+<p>
+Lace, yarn, resin, molds and craft materials.
+</p>
 
 </div>
+
+
+<div class="feature">
+
+<div class="feature-icon">🤝</div>
+
+<h3>Customer Support</h3>
+
+<p>
+Contact us for product information and orders.
+</p>
+
+</div>
+
+
+</div>
+
 </section>
 
 
 <!-- ABOUT -->
+
 <section class="about" id="about">
 
 <div class="section">
 
 <div class="about-box">
 
-<small style="color:#a56b3f;font-weight:bold;letter-spacing:2px;">
-    ABOUT US
-</small>
+<small>ABOUT US</small>
 
 <h2>Tanvir Suta Ghar</h2>
 
@@ -733,10 +402,12 @@ small businesses.
 </div>
 
 </div>
+
 </section>
 
 
 <!-- CONTACT -->
+
 <section class="section" id="contact">
 
 <div class="contact-box">
@@ -750,27 +421,27 @@ availability and orders.
 
 <div class="contact-buttons">
 
-<!-- নিজের WhatsApp number বসাবে -->
 <a class="whatsapp"
 href="https://wa.me/8801XXXXXXXXX"
 target="_blank">
-    WhatsApp
+WhatsApp
 </a>
 
-<!-- নিজের Facebook page link বসাবে -->
 <a class="facebook"
 href="https://www.facebook.com/"
 target="_blank">
-    Facebook
+Facebook
 </a>
 
 </div>
 
 </div>
+
 </section>
 
 
 <!-- FOOTER -->
+
 <footer>
 
 <p>
@@ -787,28 +458,6 @@ Artificial Flowers • Craft Materials
 </p>
 
 </footer>
-
-
-<script>
-/* Smooth navigation */
-document.querySelectorAll('a[href^="#"]').forEach(function(link){
-
-    link.addEventListener("click",function(e){
-
-        const target = document.querySelector(this.getAttribute("href"));
-
-        if(target){
-            e.preventDefault();
-
-            target.scrollIntoView({
-                behavior:"smooth"
-            });
-        }
-
-    });
-
-});
-</script>
 
 </body>
 </html>
