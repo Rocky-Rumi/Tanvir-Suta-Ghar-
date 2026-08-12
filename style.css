@@ -1,0 +1,526 @@
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+font-family:Arial,Helvetica,sans-serif;
+background:#faf8f5;
+color:#292929;
+line-height:1.6;
+}
+
+header{
+position:sticky;
+top:0;
+z-index:1000;
+background:rgba(255,255,255,.97);
+border-bottom:1px solid #eee;
+box-shadow:0 2px 15px rgba(0,0,0,.06);
+}
+
+.navbar{
+max-width:1200px;
+margin:auto;
+padding:15px 20px;
+display:flex;
+align-items:center;
+justify-content:space-between;
+}
+
+.logo{
+text-decoration:none;
+color:#222;
+font-size:22px;
+font-weight:800;
+}
+
+.logo span{
+display:block;
+color:#a56b3f;
+font-size:11px;
+letter-spacing:2px;
+}
+
+.nav-links{
+display:flex;
+gap:22px;
+list-style:none;
+}
+
+.nav-links a{
+text-decoration:none;
+color:#333;
+font-size:14px;
+font-weight:600;
+}
+
+.nav-links a:hover{
+color:#a56b3f;
+}
+
+
+/* HERO */
+
+.hero{
+min-height:570px;
+display:flex;
+align-items:center;
+
+background:
+linear-gradient(rgba(40,30,25,.55),rgba(40,30,25,.55)),
+url("images/lace.jpg") center/cover no-repeat;
+}
+
+.hero-content{
+width:100%;
+max-width:1200px;
+margin:auto;
+padding:80px 20px;
+color:white;
+}
+
+.hero-content small{
+font-size:13px;
+letter-spacing:3px;
+text-transform:uppercase;
+}
+
+.hero h1{
+font-size:clamp(40px,7vw,75px);
+line-height:1.05;
+margin:15px 0;
+}
+
+.hero h1 span{
+color:#f0c39e;
+}
+
+.hero p{
+max-width:600px;
+font-size:17px;
+margin-bottom:30px;
+}
+
+
+/* BUTTON */
+
+.btn{
+display:inline-block;
+text-decoration:none;
+padding:13px 25px;
+border-radius:30px;
+font-weight:bold;
+margin-right:8px;
+margin-bottom:8px;
+}
+
+.btn-primary{
+background:#a56b3f;
+color:white;
+}
+
+.btn-light{
+background:white;
+color:#333;
+}
+
+
+/* SECTION */
+
+.section{
+max-width:1200px;
+margin:auto;
+padding:75px 20px;
+}
+
+.section-title{
+text-align:center;
+margin-bottom:45px;
+}
+
+.section-title small{
+color:#a56b3f;
+font-weight:bold;
+letter-spacing:2px;
+text-transform:uppercase;
+}
+
+.section-title h2{
+font-size:34px;
+margin:8px 0;
+}
+
+.section-title p{
+color:#777;
+max-width:650px;
+margin:auto;
+}
+
+
+/* CATEGORY */
+
+.category-grid{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:20px;
+}
+
+.category-card{
+position:relative;
+min-height:220px;
+border-radius:18px;
+overflow:hidden;
+text-decoration:none;
+color:white;
+box-shadow:0 8px 25px rgba(0,0,0,.1);
+}
+
+.category-card img{
+width:100%;
+height:100%;
+min-height:220px;
+object-fit:cover;
+transition:.5s;
+}
+
+.category-card:hover img{
+transform:scale(1.08);
+}
+
+.category-overlay{
+position:absolute;
+inset:0;
+display:flex;
+flex-direction:column;
+justify-content:flex-end;
+padding:22px;
+
+background:
+linear-gradient(
+transparent,
+rgba(0,0,0,.78)
+);
+}
+
+.category-overlay h3{
+font-size:21px;
+}
+
+.category-overlay p{
+font-size:13px;
+}
+
+
+/* PRODUCTS */
+
+.product-grid{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:20px;
+}
+
+.product-card{
+background:white;
+border-radius:16px;
+overflow:hidden;
+border:1px solid #eee;
+box-shadow:0 5px 20px rgba(0,0,0,.05);
+text-decoration:none;
+color:#222;
+}
+
+.product-card img{
+width:100%;
+height:220px;
+object-fit:cover;
+}
+
+.product-info{
+padding:17px;
+}
+
+.product-info h3{
+font-size:17px;
+margin-bottom:5px;
+}
+
+.product-info p{
+font-size:13px;
+color:#777;
+}
+
+
+/* FEATURES */
+
+.features{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:20px;
+}
+
+.feature{
+text-align:center;
+background:white;
+padding:30px 20px;
+border-radius:16px;
+border:1px solid #eee;
+}
+
+.feature-icon{
+font-size:35px;
+margin-bottom:10px;
+}
+
+.feature h3{
+margin-bottom:8px;
+}
+
+.feature p{
+color:#777;
+font-size:14px;
+}
+
+
+/* ABOUT */
+
+.about{
+background:white;
+}
+
+.about-box{
+max-width:850px;
+margin:auto;
+text-align:center;
+}
+
+.about-box small{
+color:#a56b3f;
+font-weight:bold;
+letter-spacing:2px;
+}
+
+.about-box h2{
+font-size:34px;
+margin:10px 0 20px;
+}
+
+.about-box p{
+color:#666;
+margin-bottom:15px;
+}
+
+
+/* CONTACT */
+
+.contact-box{
+background:#30251f;
+color:white;
+border-radius:25px;
+padding:55px 25px;
+text-align:center;
+}
+
+.contact-box h2{
+font-size:34px;
+margin-bottom:10px;
+}
+
+.contact-box p{
+color:#ddd;
+margin-bottom:25px;
+}
+
+.contact-buttons a{
+display:inline-block;
+text-decoration:none;
+padding:12px 22px;
+border-radius:30px;
+margin:5px;
+font-weight:bold;
+}
+
+.whatsapp{
+background:#25D366;
+color:white;
+}
+
+.facebook{
+background:#1877F2;
+color:white;
+}
+
+
+/* CATEGORY PAGE */
+
+.page-hero{
+background:
+linear-gradient(rgba(40,30,25,.62),rgba(40,30,25,.62)),
+url("images/lace.jpg") center/cover no-repeat;
+
+padding:75px 20px;
+color:white;
+text-align:center;
+}
+
+.page-hero h1{
+font-size:clamp(35px,6vw,60px);
+margin-bottom:10px;
+}
+
+.page-hero p{
+max-width:700px;
+margin:auto;
+color:#eee;
+}
+
+.back-btn{
+display:inline-block;
+margin-top:20px;
+padding:10px 22px;
+background:white;
+color:#7b4b2d;
+border-radius:25px;
+text-decoration:none;
+font-weight:bold;
+}
+
+
+/* GALLERY */
+
+.gallery-grid{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:20px;
+}
+
+.gallery-card{
+background:white;
+border-radius:16px;
+overflow:hidden;
+border:1px solid #eee;
+box-shadow:0 5px 20px rgba(0,0,0,.05);
+}
+
+.gallery-card img{
+width:100%;
+height:240px;
+object-fit:cover;
+display:block;
+}
+
+.gallery-info{
+padding:15px;
+}
+
+.gallery-info h3{
+font-size:16px;
+}
+
+.gallery-info p{
+font-size:13px;
+color:#777;
+}
+
+
+/* FOOTER */
+
+footer{
+background:#211a16;
+color:#ccc;
+text-align:center;
+padding:30px 20px;
+}
+
+footer strong{
+color:white;
+}
+
+footer p{
+font-size:13px;
+margin-top:7px;
+}
+
+
+/* MOBILE */
+
+@media(max-width:900px){
+
+.category-grid,
+.product-grid,
+.gallery-grid{
+grid-template-columns:repeat(2,1fr);
+}
+
+.features{
+grid-template-columns:1fr;
+}
+
+.nav-links{
+display:none;
+}
+
+}
+
+
+@media(max-width:600px){
+
+.hero{
+min-height:520px;
+}
+
+.hero-content{
+padding:60px 20px;
+}
+
+.hero h1{
+font-size:44px;
+}
+
+.hero p{
+font-size:15px;
+}
+
+.section{
+padding:55px 15px;
+}
+
+.section-title h2{
+font-size:28px;
+}
+
+.category-grid,
+.product-grid,
+.gallery-grid{
+grid-template-columns:1fr 1fr;
+gap:12px;
+}
+
+.category-card,
+.category-card img{
+min-height:180px;
+}
+
+.category-overlay{
+padding:14px;
+}
+
+.category-overlay h3{
+font-size:16px;
+}
+
+.category-overlay p{
+font-size:11px;
+}
+
+.product-card img,
+.gallery-card img{
+height:160px;
+}
+
+}
