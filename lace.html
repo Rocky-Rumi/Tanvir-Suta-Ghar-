@@ -174,6 +174,130 @@ loadGallery("jari", "jari-gallery");
 
 loadGallery("cotton", "cotton-gallery");
 
+</script><!-- IMAGE LIGHTBOX -->
+
+<div id="lightbox" class="lightbox">
+
+    <button id="closeLightbox" class="lightbox-close">×</button>
+
+    <button id="prevImage" class="lightbox-nav prev">❮</button>
+
+    <img id="lightboxImage" src="" alt="Lace">
+
+    <button id="nextImage" class="lightbox-nav next">❯</button>
+
+</div>
+
+
+<script>
+
+let allImages = [];
+let currentImage = 0;
+
+const lightbox = document.getElementById("lightbox");
+const lightboxImage = document.getElementById("lightboxImage");
+const closeLightbox = document.getElementById("closeLightbox");
+const prevImage = document.getElementById("prevImage");
+const nextImage = document.getElementById("nextImage");
+
+
+document.addEventListener("click", function(event) {
+
+    if (event.target.tagName === "IMG" &&
+        event.target.closest(".lace-item")) {
+
+        allImages = Array.from(
+            document.querySelectorAll(".lace-item img")
+        );
+
+        currentImage = allImages.indexOf(event.target);
+
+        showImage();
+
+    }
+
+});
+
+
+function showImage() {
+
+    if (!allImages.length) return;
+
+    lightboxImage.src = allImages[currentImage].src;
+
+    lightbox.classList.add("active");
+
+    document.body.style.overflow = "hidden";
+}
+
+
+function closeImage() {
+
+    lightbox.classList.remove("active");
+
+    document.body.style.overflow = "";
+
+}
+
+
+function showNext() {
+
+    currentImage++;
+
+    if (currentImage >= allImages.length) {
+        currentImage = 0;
+    }
+
+    showImage();
+}
+
+
+function showPrevious() {
+
+    currentImage--;
+
+    if (currentImage < 0) {
+        currentImage = allImages.length - 1;
+    }
+
+    showImage();
+}
+
+
+closeLightbox.addEventListener("click", closeImage);
+
+nextImage.addEventListener("click", showNext);
+
+prevImage.addEventListener("click", showPrevious);
+
+
+lightbox.addEventListener("click", function(event) {
+
+    if (event.target === lightbox) {
+        closeImage();
+    }
+
+});
+
+
+document.addEventListener("keydown", function(event) {
+
+    if (!lightbox.classList.contains("active")) return;
+
+    if (event.key === "Escape") {
+        closeImage();
+    }
+
+    if (event.key === "ArrowRight") {
+        showNext();
+    }
+
+    if (event.key === "ArrowLeft") {
+        showPrevious();
+    }
+
+});
+
 </script>
 
 </body>
