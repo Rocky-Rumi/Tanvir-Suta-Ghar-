@@ -1,7 +1,3 @@
-/* ================================
-   TANVIR SUTA GHAR - FINAL CSS
-   ================================ */
-
 * {
     margin: 0;
     padding: 0;
@@ -14,14 +10,421 @@ html {
 
 body {
     font-family: Arial, Helvetica, sans-serif;
-    background: #f8f6f2;
+    background: #f8f7f4;
     color: #222;
     line-height: 1.6;
 }
 
-/* ================================
-   HEADER
-   ================================ */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+
+/* =========================
+   NAVBAR
+========================= */
+
+header {
+    background: #111;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar {
+    max-width: 1200px;
+    margin: auto;
+    min-height: 75px;
+    padding: 12px 25px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.logo {
+    color: white;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.logo span {
+    display: block;
+    font-size: 9px;
+    letter-spacing: 2px;
+    color: #ccc;
+    margin-top: 4px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+.nav-links a {
+    color: white;
+    font-size: 15px;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: #d4af37;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    min-height: 600px;
+    padding: 100px 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    background:
+        linear-gradient(rgba(0,0,0,.62), rgba(0,0,0,.62)),
+        url("images/lace.jpg") center/cover no-repeat;
+}
+
+.hero-content {
+    max-width: 800px;
+    color: white;
+}
+
+.hero-content small {
+    font-size: 16px;
+    letter-spacing: 1px;
+}
+
+.hero h1 {
+    font-size: 52px;
+    line-height: 1.15;
+    margin: 18px 0;
+}
+
+.hero h1 span {
+    color: #e0b84b;
+}
+
+.hero p {
+    max-width: 680px;
+    margin: 0 auto 30px;
+    font-size: 18px;
+    color: #eee;
+}
+
+
+/* =========================
+   BUTTONS
+========================= */
+
+.btn {
+    display: inline-block;
+    padding: 13px 25px;
+    margin: 5px;
+    border-radius: 30px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.btn-primary {
+    background: #d4af37;
+    color: #111;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+}
+
+.btn-light {
+    border: 1px solid white;
+    color: white;
+}
+
+.btn-light:hover {
+    background: white;
+    color: #111;
+}
+
+
+/* =========================
+   GENERAL SECTION
+========================= */
+
+.section {
+    max-width: 1200px;
+    margin: auto;
+    padding: 80px 25px;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.section-title small {
+    color: #a17c18;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.section-title h2 {
+    font-size: 36px;
+    margin: 8px 0 10px;
+}
+
+.section-title p {
+    color: #666;
+    font-size: 16px;
+}
+
+
+/* =========================
+   CATEGORY GRID
+========================= */
+
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 22px;
+}
+
+.category-card {
+    height: 280px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 16px;
+    background: white;
+    box-shadow: 0 7px 20px rgba(0,0,0,.09);
+}
+
+.category-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: .4s;
+}
+
+.category-card:hover img {
+    transform: scale(1.08);
+}
+
+.category-overlay {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    padding: 35px 18px 18px;
+
+    color: white;
+
+    background: linear-gradient(
+        transparent,
+        rgba(0,0,0,.88)
+    );
+}
+
+.category-overlay h3 {
+    font-size: 21px;
+    margin-bottom: 3px;
+}
+
+.category-overlay p {
+    font-size: 13px;
+    color: #eee;
+}
+
+
+/* =========================
+   PRODUCT GRID
+========================= */
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 22px;
+}
+
+.product-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 6px 20px rgba(0,0,0,.08);
+    transition: .3s;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+}
+
+.product-card img {
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+}
+
+.product-info {
+    padding: 18px;
+}
+
+.product-info h3 {
+    font-size: 19px;
+    margin-bottom: 5px;
+}
+
+.product-info p {
+    color: #666;
+    font-size: 14px;
+}
+
+
+/* =========================
+   FEATURES
+========================= */
+
+.features {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.feature {
+    background: white;
+    padding: 35px 25px;
+    text-align: center;
+    border-radius: 16px;
+    box-shadow: 0 6px 20px rgba(0,0,0,.07);
+}
+
+.feature-icon {
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+.feature h3 {
+    font-size: 20px;
+    margin-bottom: 8px;
+}
+
+.feature p {
+    color: #666;
+}
+
+
+/* =========================
+   ABOUT
+========================= */
+
+.about {
+    background: #eeeae2;
+}
+
+.about-box {
+    max-width: 800px;
+    margin: auto;
+    text-align: center;
+}
+
+.about-box small {
+    color: #a17c18;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.about-box h2 {
+    font-size: 36px;
+    margin: 8px 0 20px;
+}
+
+.about-box p {
+    color: #555;
+    margin-bottom: 15px;
+    font-size: 16px;
+}
+
+
+/* =========================
+   CONTACT
+========================= */
+
+.contact-box {
+    max-width: 800px;
+    margin: auto;
+    padding: 50px 25px;
+    text-align: center;
+    background: white;
+    border-radius: 18px;
+    box-shadow: 0 7px 25px rgba(0,0,0,.08);
+}
+
+.contact-box h2 {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.contact-box p {
+    color: #666;
+    margin-bottom: 25px;
+}
+
+.contact-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+}
+
+.contact-buttons a {
+    padding: 12px 25px;
+    border-radius: 25px;
+    color: white;
+    font-weight: bold;
+}
+
+.whatsapp {
+    background: #25d366;
+}
+
+.facebook {
+    background: #1877f2;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    background: #111;
+    color: #ccc;
+    text-align: center;
+    padding: 30px 20px;
+    font-size: 14px;
+}
+
+footer p {
+    margin: 5px 0;
+}
+
+
+/* ==================================================
+   LACE GALLERY
+================================================== */
 
 .gallery-header {
     background: linear-gradient(135deg, #111827, #374151);
@@ -34,35 +437,22 @@ body {
 .gallery-header h1 {
     font-size: 32px;
     margin-bottom: 5px;
-    letter-spacing: 1px;
 }
 
 .gallery-header p {
     font-size: 18px;
-    color: #e5e7eb;
+    color: #ddd;
 }
 
 .back-btn {
     position: absolute;
     left: 20px;
     top: 20px;
-    text-decoration: none;
-    color: white;
-    background: rgba(255,255,255,0.15);
     padding: 9px 16px;
     border-radius: 25px;
-    transition: 0.3s;
+    color: white;
+    background: rgba(255,255,255,.15);
 }
-
-.back-btn:hover {
-    background: white;
-    color: #111827;
-}
-
-
-/* ================================
-   CATEGORY BUTTONS
-   ================================ */
 
 .lace-categories {
     max-width: 1100px;
@@ -75,42 +465,30 @@ body {
 }
 
 .lace-category {
-    text-decoration: none;
-    color: #222;
     background: white;
     padding: 28px 20px;
     text-align: center;
     border-radius: 18px;
-
-    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
-
-    transition: 0.3s;
+    box-shadow: 0 6px 20px rgba(0,0,0,.08);
+    transition: .3s;
 }
 
 .lace-category:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 12px 28px rgba(0,0,0,0.15);
+    transform: translateY(-5px);
 }
 
 .category-icon {
-    font-size: 38px;
-    margin-bottom: 8px;
+    font-size: 35px;
 }
 
 .lace-category h2 {
     font-size: 22px;
-    margin-bottom: 5px;
 }
 
 .lace-category p {
     color: #777;
     font-size: 14px;
 }
-
-
-/* ================================
-   LACE SECTIONS
-   ================================ */
 
 .lace-section {
     max-width: 1200px;
@@ -120,26 +498,9 @@ body {
 
 .lace-section h2 {
     text-align: center;
-    font-size: 28px;
-    margin-bottom: 25px;
-    color: #222;
-    position: relative;
+    font-size: 30px;
+    margin-bottom: 28px;
 }
-
-.lace-section h2::after {
-    content: "";
-    display: block;
-    width: 60px;
-    height: 3px;
-    background: #222;
-    margin: 10px auto 0;
-    border-radius: 10px;
-}
-
-
-/* ================================
-   IMAGE GALLERY
-   ================================ */
 
 .lace-grid {
     display: grid;
@@ -149,159 +510,44 @@ body {
 
 .lace-item {
     background: white;
-    border-radius: 14px;
     overflow: hidden;
-
-    box-shadow: 0 5px 18px rgba(0,0,0,0.09);
-
-    transition: 0.3s;
-}
-
-.lace-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.16);
+    border-radius: 14px;
+    box-shadow: 0 5px 18px rgba(0,0,0,.09);
 }
 
 .lace-item img {
     width: 100%;
     height: 230px;
-    display: block;
     object-fit: cover;
-
-    transition: 0.4s;
+    cursor: pointer;
+    transition: .3s;
 }
 
 .lace-item:hover img {
-    transform: scale(1.05);
+    transform: scale(1.04);
 }
-
-
-/* ================================
-   EMPTY CATEGORY
-   ================================ */
 
 .empty-category {
     width: 100%;
+    padding: 40px;
     background: white;
-    padding: 45px 20px;
     text-align: center;
-
     border-radius: 15px;
     color: #777;
-
-    box-shadow: 0 5px 18px rgba(0,0,0,0.07);
 }
 
 
-/* ================================
-   FOOTER
-   ================================ */
-
-footer {
-    margin-top: 70px;
-    padding: 25px 15px;
-    text-align: center;
-
-    background: #111827;
-    color: #ddd;
-
-    font-size: 14px;
-}
-
-
-/* ================================
-   MOBILE
-   ================================ */
-
-@media (max-width: 768px) {
-
-    .gallery-header {
-        padding: 75px 15px 35px;
-    }
-
-    .gallery-header h1 {
-        font-size: 26px;
-    }
-
-    .gallery-header p {
-        font-size: 16px;
-    }
-
-    .back-btn {
-        left: 15px;
-        top: 15px;
-        font-size: 14px;
-    }
-
-    .lace-categories {
-        grid-template-columns: 1fr;
-        gap: 15px;
-        margin: 25px auto;
-    }
-
-    .lace-category {
-        padding: 22px 15px;
-    }
-
-    .lace-section {
-        margin: 45px auto;
-        padding: 0 12px;
-    }
-
-    .lace-section h2 {
-        font-size: 24px;
-    }
-
-    .lace-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 10px;
-    }
-
-    .lace-item {
-        border-radius: 10px;
-    }
-
-    .lace-item img {
-        height: 180px;
-    }
-}
-
-
-/* ================================
-   SMALL PHONES
-   ================================ */
-
-@media (max-width: 400px) {
-
-    .gallery-header h1 {
-        font-size: 23px;
-    }
-
-    .lace-grid {
-        gap: 8px;
-    }
-
-    .lace-item img {
-        height: 155px;
-    }
-
-    .lace-category h2 {
-        font-size: 20px;
-    }
-}
-/* ================================
-   IMAGE LIGHTBOX
-   ================================ */
+/* =========================
+   LIGHTBOX
+========================= */
 
 .lightbox {
     display: none;
-
     position: fixed;
     inset: 0;
-
-    background: rgba(0, 0, 0, 0.92);
-
     z-index: 9999;
+
+    background: rgba(0,0,0,.92);
 
     align-items: center;
     justify-content: center;
@@ -315,63 +561,37 @@ footer {
 
 .lightbox img {
     max-width: 90%;
-    max-height: 88vh;
-
+    max-height: 85vh;
     object-fit: contain;
+    border-radius: 8px;
+}
 
-    border-radius: 10px;
-
-    box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+.lightbox-close,
+.lightbox-nav {
+    position: absolute;
+    border: none;
+    cursor: pointer;
+    z-index: 10000;
 }
 
 .lightbox-close {
-    position: absolute;
-
     top: 15px;
     right: 20px;
-
     width: 45px;
     height: 45px;
-
-    border: none;
     border-radius: 50%;
-
     background: white;
-    color: #111;
-
-    font-size: 32px;
-    line-height: 40px;
-
-    cursor: pointer;
-
-    z-index: 10001;
+    font-size: 30px;
 }
 
 .lightbox-nav {
-    position: absolute;
-
     top: 50%;
     transform: translateY(-50%);
-
     width: 50px;
     height: 50px;
-
-    border: none;
     border-radius: 50%;
-
-    background: rgba(255,255,255,0.9);
-    color: #111;
-
-    font-size: 22px;
-
-    cursor: pointer;
-
-    z-index: 10001;
-}
-
-.lightbox-nav:hover,
-.lightbox-close:hover {
-    transform: scale(1.08);
+    background: white;
+    font-size: 20px;
 }
 
 .lightbox-nav.prev {
@@ -383,38 +603,164 @@ footer {
 }
 
 
-/* MOBILE LIGHTBOX */
+/* =========================
+   MOBILE
+========================= */
 
-@media (max-width: 600px) {
+@media (max-width: 900px) {
 
-    .lightbox {
-        padding: 10px;
+    .category-grid {
+        grid-template-columns: repeat(2, 1fr);
     }
 
-    .lightbox img {
-        max-width: 94%;
-        max-height: 80vh;
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr);
     }
 
-    .lightbox-nav {
-        width: 42px;
-        height: 42px;
-        font-size: 18px;
+    .lace-grid {
+        grid-template-columns: repeat(3, 1fr);
     }
 
-    .lightbox-nav.prev {
-        left: 8px;
+    .nav-links {
+        gap: 12px;
+    }
+}
+
+
+@media (max-width: 650px) {
+
+    .navbar {
+        flex-direction: column;
+        padding: 15px;
+        gap: 12px;
     }
 
-    .lightbox-nav.next {
-        right: 8px;
+    .nav-links {
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 12px 18px;
     }
 
-    .lightbox-close {
-        top: 10px;
-        right: 10px;
-        width: 40px;
-        height: 40px;
-        font-size: 28px;
+    .logo {
+        text-align: center;
+    }
+
+    .hero {
+        min-height: 520px;
+        padding: 70px 18px;
+    }
+
+    .hero h1 {
+        font-size: 36px;
+    }
+
+    .hero p {
+        font-size: 15px;
+    }
+
+    .section {
+        padding: 55px 15px;
+    }
+
+    .section-title h2 {
+        font-size: 29px;
+    }
+
+    .category-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+
+    .category-card {
+        height: 210px;
+    }
+
+    .category-overlay {
+        padding: 28px 10px 10px;
+    }
+
+    .category-overlay h3 {
+        font-size: 16px;
+    }
+
+    .category-overlay p {
+        font-size: 11px;
+    }
+
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+
+    .product-card img {
+        height: 170px;
+    }
+
+    .product-info {
+        padding: 12px;
+    }
+
+    .product-info h3 {
+        font-size: 16px;
+    }
+
+    .product-info p {
+        font-size: 12px;
+    }
+
+    .features {
+        grid-template-columns: 1fr;
+    }
+
+    .lace-categories {
+        grid-template-columns: 1fr;
+        padding: 0 15px;
+    }
+
+    .lace-section {
+        padding: 0 12px;
+    }
+
+    .lace-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+    .lace-item img {
+        height: 180px;
+    }
+
+    .gallery-header {
+        padding: 75px 15px 35px;
+    }
+
+    .gallery-header h1 {
+        font-size: 26px;
+    }
+
+    .back-btn {
+        left: 15px;
+        top: 15px;
+    }
+
+    .contact-buttons {
+        flex-direction: column;
+    }
+}
+
+
+@media (max-width: 400px) {
+
+    .hero h1 {
+        font-size: 31px;
+    }
+
+    .category-card {
+        height: 190px;
+    }
+
+    .lace-item img {
+        height: 155px;
     }
 }
