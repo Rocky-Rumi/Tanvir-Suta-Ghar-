@@ -1,177 +1,316 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Lace Gallery - Tanvir Suta Ghar</title>
+  <title>Lace Gallery | Tanvir Suta Ghar</title>
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Tanvir Suta Ghar Lace Gallery - Fancy Lace, Jari Lace and Cotton Lace collection.">
 
-<style>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-body{
-margin:0;
-font-family:Arial,sans-serif;
-background:#faf7f2;
-color:#333;
-}
+    body {
+      font-family: Arial, sans-serif;
+      background: #f8f5f0;
+      color: #222;
+    }
 
-header{
-background:#6b3e26;
-color:white;
-padding:40px 20px;
-text-align:center;
-}
+    header {
+      background: linear-gradient(135deg, #7b1e3a, #a83255);
+      color: white;
+      text-align: center;
+      padding: 28px 15px;
+    }
 
-header h1{
-margin:0;
-font-size:35px;
-}
+    header h1 {
+      font-size: 30px;
+      margin-bottom: 8px;
+    }
 
-.container{
-padding:20px;
-}
+    header p {
+      font-size: 15px;
+      opacity: 0.95;
+    }
 
-.box{
-background:white;
-padding:25px;
-margin:20px 0;
-border-radius:15px;
-box-shadow:0 3px 10px #ddd;
-}
+    .back-btn {
+      display: inline-block;
+      margin-top: 18px;
+      padding: 10px 20px;
+      background: white;
+      color: #7b1e3a;
+      text-decoration: none;
+      border-radius: 25px;
+      font-weight: bold;
+      transition: 0.3s;
+    }
 
-h2{
-color:#6b3e26;
-text-align:center;
-}
+    .back-btn:hover {
+      background: #f1d9e1;
+    }
 
-.categories{
-display:flex;
-flex-wrap:wrap;
-justify-content:center;
-}
+    .container {
+      width: 92%;
+      max-width: 1100px;
+      margin: 35px auto;
+    }
 
-.category{
-background:white;
-width:220px;
-margin:10px;
-padding:20px;
-border-radius:15px;
-text-align:center;
-box-shadow:0 3px 10px #ddd;
-}
+    .intro {
+      text-align: center;
+      margin-bottom: 30px;
+    }
 
-.category h3{
-color:#6b3e26;
-}
+    .intro h2 {
+      font-size: 26px;
+      color: #7b1e3a;
+      margin-bottom: 10px;
+    }
 
-a{
-text-decoration:none;
-color:inherit;
-}
+    .intro p {
+      color: #666;
+      line-height: 1.6;
+    }
 
-.back{
-display:inline-block;
-background:#6b3e26;
-color:white;
-padding:10px 20px;
-border-radius:25px;
-}
+    .category-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 22px;
+    }
 
-footer{
-background:#222;
-color:white;
-padding:15px;
-text-align:center;
-margin-top:20px;
-}
+    .category-card {
+      background: white;
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 5px 18px rgba(0,0,0,0.10);
+      text-decoration: none;
+      color: #222;
+      transition: 0.3s;
+    }
 
-</style>
+    .category-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    }
 
+    .category-card img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .card-content {
+      padding: 20px;
+      text-align: center;
+    }
+
+    .card-content h3 {
+      color: #7b1e3a;
+      font-size: 21px;
+      margin-bottom: 8px;
+    }
+
+    .card-content p {
+      color: #666;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    .view-btn {
+      display: inline-block;
+      margin-top: 14px;
+      background: #7b1e3a;
+      color: white;
+      padding: 9px 18px;
+      border-radius: 22px;
+      font-size: 14px;
+      font-weight: bold;
+    }
+
+    .contact {
+      margin-top: 40px;
+      background: white;
+      padding: 25px;
+      border-radius: 18px;
+      text-align: center;
+      box-shadow: 0 5px 18px rgba(0,0,0,0.08);
+    }
+
+    .contact h3 {
+      color: #7b1e3a;
+      margin-bottom: 10px;
+    }
+
+    .contact p {
+      color: #666;
+      margin-bottom: 15px;
+    }
+
+    .whatsapp {
+      display: inline-block;
+      background: #25D366;
+      color: white;
+      padding: 11px 22px;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    footer {
+      margin-top: 45px;
+      background: #222;
+      color: white;
+      text-align: center;
+      padding: 20px 10px;
+      font-size: 14px;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 25px;
+      }
+
+      .intro h2 {
+        font-size: 23px;
+      }
+
+      .category-card img {
+        height: 200px;
+      }
+    }
+  </style>
 </head>
-
 
 <body>
 
+  <header>
+    <h1>Tanvir Suta Ghar</h1>
+    <p>Quality Craft &amp; Decorative Materials</p>
 
-<header>
+    <a href="index.html" class="back-btn">
+      ← Back to Home
+    </a>
+  </header>
 
-<h1>Tanvir Suta Ghar</h1>
+  <main class="container">
 
-<p>Lace Gallery</p>
+    <section class="intro">
+      <h2>Lace Gallery</h2>
+      <p>
+        Explore our collection of beautiful laces for fashion,
+        crafting, decoration and creative projects.
+      </p>
+    </section>
 
-</header>
+    <section class="category-grid">
 
+      <!-- Fancy Lace -->
+      <a href="#" class="category-card">
 
-<div class="container">
+        <img
+          src="images/lace.jpg"
+          alt="Fancy Lace"
+          onerror="this.style.display='none'"
+        >
 
+        <div class="card-content">
+          <h3>Fancy Lace</h3>
 
-<a class="back" href="index.html">← Back Home</a>
+          <p>
+            Beautiful and stylish fancy lace collection
+            for different creative and decorative works.
+          </p>
 
+          <span class="view-btn">
+            View Collection
+          </span>
+        </div>
 
-<div class="box">
-
-<h2>Lace Varieties</h2>
-
-
-<div class="categories">
-
-
-<div class="category">
-<h3>✨ Fancy Lace</h3>
-<p>Premium fancy lace designs</p>
-</div>
-
-
-<div class="category">
-<h3>🪡 Jari Lace</h3>
-<p>Traditional jari lace collection</p>
-</div>
-
-
-<div class="category">
-<h3>🧶 Cotton Lace</h3>
-<p>Soft cotton lace designs</p>
-</div>
-
-
-<div class="category">
-<h3>👰 Bridal Lace</h3>
-<p>Special bridal lace collection</p>
-</div>
+      </a>
 
 
-<div class="category">
-<h3>🌸 Embroidery Lace</h3>
-<p>Beautiful embroidery designs</p>
-</div>
+      <!-- Jari Lace -->
+      <a href="#" class="category-card">
+
+        <img
+          src="images/lace.jpg"
+          alt="Jari Lace"
+          onerror="this.style.display='none'"
+        >
+
+        <div class="card-content">
+          <h3>Jari Lace</h3>
+
+          <p>
+            Attractive jari lace collection suitable for
+            clothing, decoration and handicrafts.
+          </p>
+
+          <span class="view-btn">
+            View Collection
+          </span>
+        </div>
+
+      </a>
 
 
-<div class="category">
-<h3>⭐ Net Lace</h3>
-<p>Latest net lace designs</p>
-</div>
+      <!-- Cotton Lace -->
+      <a href="#" class="category-card">
+
+        <img
+          src="images/lace.jpg"
+          alt="Cotton Lace"
+          onerror="this.style.display='none'"
+        >
+
+        <div class="card-content">
+          <h3>Cotton Lace</h3>
+
+          <p>
+            Soft and elegant cotton lace for clothing,
+            handmade products and creative projects.
+          </p>
+
+          <span class="view-btn">
+            View Collection
+          </span>
+        </div>
+
+      </a>
+
+    </section>
 
 
-<div class="category">
-<h3>🆕 New Designs</h3>
-<p>Latest lace collection</p>
-</div>
+    <section class="contact">
+
+      <h3>Need More Information?</h3>
+
+      <p>
+        Contact Tanvir Suta Ghar for product details,
+        availability and price.
+      </p>
+
+      <a
+        href="https://wa.me/"
+        class="whatsapp"
+        target="_blank"
+      >
+        WhatsApp Us
+      </a>
+
+    </section>
+
+  </main>
 
 
-</div>
-
-</div>
-
-
-</div>
-
-
-<footer>
-
-<p>© 2026 Tanvir Suta Ghar</p>
-
-</footer>
-
+  <footer>
+    © 2026 Tanvir Suta Ghar. All Rights Reserved.
+  </footer>
 
 </body>
 </html>
