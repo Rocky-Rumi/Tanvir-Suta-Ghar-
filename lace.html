@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Lace Gallery - Tanvir Suta Ghar</title>
+
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -11,9 +13,11 @@
 
 <header class="gallery-header">
     <a href="index.html" class="back-btn">← Home</a>
+
     <h1>Tanvir Suta Ghar</h1>
     <p>Lace Gallery</p>
 </header>
+
 
 <section class="lace-categories">
 
@@ -44,32 +48,8 @@
 
     <h2>Fancy Lace</h2>
 
-    <div class="lace-grid">
-
-        <div class="lace-item">
-            <img src="lace/fancy/1.jpg" alt="Fancy Lace">
-        </div>
-
-        <div class="lace-item">
-            <img src="lace/fancy/2.jpg" alt="Fancy Lace">
-        </div>
-
-        <div class="lace-item">
-            <img src="lace/fancy/3.jpg" alt="Fancy Lace">
-        </div>
-
-        <div class="lace-item">
-            <img src="lace/fancy/4.jpg" alt="Fancy Lace">
-        </div>
-
-        <div class="lace-item">
-            <img src="lace/fancy/5.jpg" alt="Fancy Lace">
-        </div>
-
-        <div class="lace-item">
-            <img src="lace/fancy/6.jpg" alt="Fancy Lace">
-        </div>
-
+    <div id="fancy-gallery" class="lace-grid">
+        <p>Loading Fancy Lace...</p>
     </div>
 
 </section>
@@ -81,12 +61,8 @@
 
     <h2>Jari Lace</h2>
 
-    <div class="lace-grid">
-
-        <div class="empty-category">
-            Jari Lace Collection Coming Soon
-        </div>
-
+    <div id="jari-gallery" class="lace-grid">
+        <p>Loading Jari Lace...</p>
     </div>
 
 </section>
@@ -98,12 +74,8 @@
 
     <h2>Cotton Lace</h2>
 
-    <div class="lace-grid">
-
-        <div class="empty-category">
-            Cotton Lace Collection Coming Soon
-        </div>
-
+    <div id="cotton-gallery" class="lace-grid">
+        <p>Loading Cotton Lace...</p>
     </div>
 
 </section>
@@ -112,6 +84,97 @@
 <footer>
     <p>© 2026 Tanvir Suta Ghar</p>
 </footer>
+
+
+<script>
+
+async function loadGallery(folder, galleryId) {
+
+    const gallery = document.getElementById(galleryId);
+
+    try {
+
+        const path = window.location.pathname.split('/');
+
+        const repoIndex = path.indexOf('Tanvir-Suta-Ghar-');
+
+        const owner = "Rocky-Rumi";
+        const repo = "Tanvir-Suta-Ghar-";
+
+        const apiUrl =
+            `https://api.github.com/repos/${owner}/${repo}/contents/lace/${folder}`;
+
+        const response = await fetch(apiUrl);
+
+        if (!response.ok) {
+            throw new Error("Folder not found");
+        }
+
+        const files = await response.json();
+
+        gallery.innerHTML = "";
+
+        const images = files
+            .filter(file =>
+                file.type === "file" &&
+                /\.(jpg|jpeg|png|webp)$/i.test(file.name)
+            )
+            .sort((a, b) =>
+                a.name.localeCompare(b.name, undefined, {
+                    numeric: true,
+                    sensitivity: "base"
+                })
+            );
+
+        if (images.length === 0) {
+
+            gallery.innerHTML =
+                `<div class="empty-category">
+                    No images found
+                </div>`;
+
+            return;
+        }
+
+        images.forEach(file => {
+
+            const item = document.createElement("div");
+            item.className = "lace-item";
+
+            const img = document.createElement("img");
+
+            img.src = file.download_url;
+            img.alt = folder + " lace";
+
+            img.loading = "lazy";
+
+            item.appendChild(img);
+
+            gallery.appendChild(item);
+
+        });
+
+    } catch (error) {
+
+        gallery.innerHTML =
+            `<div class="empty-category">
+                Unable to load images
+            </div>`;
+
+        console.error(error);
+    }
+}
+
+
+/* LOAD ALL LACE FOLDERS */
+
+loadGallery("fancy", "fancy-gallery");
+
+loadGallery("jari", "jari-gallery");
+
+loadGallery("cotton", "cotton-gallery");
+
+</script>
 
 </body>
 </html>
